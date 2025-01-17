@@ -1,4 +1,10 @@
 # pi-midi-velocity-curve-changer
+This little python script will adjust the midi velocity curve from your keyboard to fix velocity issues if your keyboard does not handle the velocity well. 
+Setup is like: Keyboard -> USB -> Rasbperry PI -> USB to Midi -> Midi In from your Synthesizer / MPC.
+You also need: 
+1. USB Keyboard
+2. A USB to Midi device (e.g.: CME U2MIDI Pro)
+
 
 1. Setup the midi.py and midi.sh file on your raspberry pi
 2. Install the python libs:
