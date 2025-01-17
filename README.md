@@ -21,10 +21,16 @@ You also need:
    Copy the full name from your usb input device (keyboard) and your usb output device (usb to midi).
 5. (optional) adjust the parameters from the function in the script for your optimal velocity settings.
 6. Set up the autostart from your midi script:
+   
    chmod 775 /home/user1/midi.sh
+   
    crontab -e
-   Input this in the crontab file: 
+   
+   Input this in the crontab file:
+   
    @reboot sh /home/user1/midi.sh
+
+   
 8. Reboot
 
 ## Thanks
