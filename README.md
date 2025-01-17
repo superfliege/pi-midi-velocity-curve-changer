@@ -13,9 +13,11 @@ You also need:
 
 1. Setup the midi.py and midi.sh file on your raspberry pi
 2. Install the python libs:
+   
    pip install mido
+
    pip install math
-3. Start the python script. The script will show you the name of your connected midi devices and will crash.
+4. Start the python script. The script will show you the name of your connected midi devices and will crash.
    Copy the full name from your usb input device (keyboard) and your usb output device (usb to midi).
 5. (optional) adjust the parameters from the function in the script for your optimal velocity settings.
 6. Set up the autostart from your midi script:
