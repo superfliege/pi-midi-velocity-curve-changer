@@ -3,6 +3,10 @@
 This little python script will adjust the midi velocity curve from your keyboard to fix velocity issues if your keyboard does not handle the velocity well. 
 Setup is like: Keyboard -> USB -> Rasbperry PI -> USB to Midi -> Midi In from your Synthesizer / MPC.
 
+I had the following problem:
+I have a Native Instruments KOMPLETE KONTROL A49 keyboard and an MPC ONE.
+Although I think the keyboard is pretty good, it has a terrible velocity curve which unfortunately is not standalone. I still have an old Raspberry Pi lying around and a USB-to-Midi adapter. With this Python script it was possible to put the Raspberry Pi between the keyboard and the MPC one to function as a “velocity adjuster”.
+
 You also need: 
 
 1. USB Keyboard
