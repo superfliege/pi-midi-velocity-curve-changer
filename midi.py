@@ -12,9 +12,6 @@ print("\nAvailable output ports:")
 for port in mido.get_output_names():
     print(port)
 
-
-import math
-
 # Function to adjust the velocity curve, change default values for your best setup:
 def adjust_velocity(velocity, max_value=100, exponent=0.70):
     if velocity == 0:
