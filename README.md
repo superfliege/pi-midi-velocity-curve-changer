@@ -11,6 +11,7 @@ You also need:
 
 1. USB Keyboard
 2. A USB to Midi device (e.g.: CME U2MIDI Pro)
+3. Raspberry Pi
 
 
 ## Setup 
