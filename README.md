@@ -41,8 +41,8 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 
 ### 2. Set Input Device Names
 
-- `inputnamesearchname`: Set this to the name (or part of the name) of your primary MIDI input device (e.g., "MPK mini").
-- `inputnamesearchname2`: Set this to the name (or part of the name) of an alternative MIDI input device (e.g., "KOMPLETE"). If you have only one input device leave this empty. 
+- `inputnamesearchname`: Set this to the name (or part of the name) of your primary MIDI input device (e.g., "KOMPLETE").
+- `inputnamesearchname2`: Set this to the name (or part of the name) of an alternative MIDI input device (e.g., "MPK mini"). If you have only one input device leave this empty. 
 - `inputnamethrusearchname`: Set this to the name (or part of the name) of the MIDI device used for the program_change will channel_change functionality (e.g., "LPD8"). If you do not need this leave this empty. 
 
 ### 3. Set Output Device Name
@@ -56,8 +56,8 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 ### Example Configuration
 
 ```python
-inputnamesearchname = "MPK mini"
-inputnamesearchname2 = "KOMPLETE"
+inputnamesearchname = "KOMPLETE"
+inputnamesearchname2 = "MPK mini"
 inputnamethrusearchname = "LPD8"
 outputsearchname = "U2MIDI"
 lpd8controlMode = True
