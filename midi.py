@@ -83,8 +83,10 @@ def midithruthread():
         #adjust midi channel
         if msg.type == "program_change":
             channelchange = msg.program
-        msg.channel = channelchange
-        output_port.send(msg)
+            msg.channel = channelchange
+        else:
+            output_port.send(msg)
+        
 
 thread = threading.Thread(target=midithread)
 thread.start()
