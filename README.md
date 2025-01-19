@@ -35,8 +35,6 @@ You also need:
 
 ## 4. Configuration
 
-To set up the configuration for the MIDI velocity curve changer script, follow these steps:
-
 ### 1. Edit Configuration Variables
 
 Open the script file (`midi.py`) in a text editor. Locate the configuration section at the top of the script.
@@ -44,8 +42,8 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 ### 2. Set Input Device Names
 
 - `inputnamesearchname`: Set this to the name (or part of the name) of your primary MIDI input device (e.g., "MPK mini").
-- `inputnamesearchname2`: Set this to the name (or part of the name) of an alternative MIDI input device (e.g., "KOMPLETE").
-- `inputnamethrusearchname`: Set this to the name (or part of the name) of the MIDI device used for the program_change will channel_change functionality (e.g., "LPD8").
+- `inputnamesearchname2`: Set this to the name (or part of the name) of an alternative MIDI input device (e.g., "KOMPLETE"). If you have only one input device leave this empty. 
+- `inputnamethrusearchname`: Set this to the name (or part of the name) of the MIDI device used for the program_change will channel_change functionality (e.g., "LPD8"). If you do not need this leave this empty. 
 
 ### 3. Set Output Device Name
 
@@ -53,7 +51,7 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 
 ### 4. (optional) Disable/Enable LPD8 Control Mode
 
-- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`.
+- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`. 
 
 ### Example Configuration
 
