@@ -71,7 +71,8 @@ def midithread():
         if msg.type == 'note_on' or msg.type == 'note_off':
             # Adjust the velocity
             msg.velocity = adjust_velocity(msg.velocity)
-        msg.channel = channelchange
+        if msg.type != 'control_change':
+            msg.channel = channelchange
         # Send the modified message to the output port
         #print(msg)
         output_port.send(msg)
