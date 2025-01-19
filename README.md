@@ -15,7 +15,7 @@ You also need:
 4. (Optional) Akai LPD8 Controller
 
 
-## Setup 
+# Setup 
 
 # 1. Setup the midi.py and midi.sh file on your raspberry pi
 # 2. Install the python libs:
@@ -40,7 +40,7 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 
 - `inputnamesearchname`: Set this to the name (or part of the name) of your primary MIDI input device (e.g., "MPK mini").
 - `inputnamesearchname2`: Set this to the name (or part of the name) of an alternative MIDI input device (e.g., "KOMPLETE").
-- `inputnamethrusearchname`: Set this to the name (or part of the name) of the MIDI device used for thru functionality (e.g., "LPD8").
+- `inputnamethrusearchname`: Set this to the name (or part of the name) of the MIDI device used for the program_change will channel_change functionality (e.g., "LPD8").
 
 ### 3. Set Output Device Name
 
