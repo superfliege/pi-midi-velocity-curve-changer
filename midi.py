@@ -82,8 +82,7 @@ def midithruthread():
         #print(msg)
         #adjust midi channel
         if msg.type == "program_change":
-            channelchange = msg.program
-            msg.channel = channelchange
+            channelchange = msg.program - 1
         else:
             output_port.send(msg)
         
