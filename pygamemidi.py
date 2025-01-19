@@ -5,7 +5,7 @@ import pygame
 import threading
 pygame.init()
 pygame.display.init()
-screen = pygame.display.set_mode([640,480])
+screen = pygame.display.set_mode([800,480])
 running = True
 
 inputname  = ""
