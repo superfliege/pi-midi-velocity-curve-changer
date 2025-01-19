@@ -22,7 +22,7 @@ You also need:
 
 # Setup 
 
-# 1. Setup the midi.py and midi.sh file on your raspberry pi
+# 1. Setup the midi.py and start-midi.sh file on your raspberry pi
 # 2. Install the python libs:
    
    pip install mido
@@ -72,7 +72,7 @@ midi_exponent = 0.60
 
 # 6. Set up the autostart from your midi script:
    
-   chmod 775 /home/user1/midi.sh
+   chmod 775 /home/user1/start-midi.sh
    
    crontab -e
    
