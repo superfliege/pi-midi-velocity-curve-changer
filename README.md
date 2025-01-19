@@ -8,7 +8,9 @@ I have a Native Instruments KOMPLETE KONTROL A49 keyboard and an MPC ONE.
 Although I think the keyboard is pretty good, it has a terrible velocity curve which unfortunately is not standalone customizable. I still have an old Raspberry Pi lying around and a USB-to-Midi adapter. With this Python script it was possible to put the Raspberry Pi between the keyboard and the MPC one to function as a “velocity adjuster”.
 
 Optional: If you have an Akai LPD8 Controller you can use the prgm_change midi message to manipulate the midi messages from your input device.
-With this functionality the script will give you a change to change midi channel for your keyboard. 
+With this functionality the script will give you a chance to change midi channel for your keyboard. 
+
+The pygamemidi.py and pygamemidi.sh are experimental and are used to display the velocity curve, midichannel change. They are not necessary.
 
 You also need: 
 
