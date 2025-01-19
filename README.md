@@ -70,8 +70,6 @@ midi_max_value = 80
 midi_exponent = 0.60
 ```
 
-# 5. (optional) adjust the parameters from the function in the script for your optimal velocity settings.
-
 # 6. Set up the autostart from your midi script:
    
    chmod 775 /home/user1/midi.sh
