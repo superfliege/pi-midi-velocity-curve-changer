@@ -78,7 +78,7 @@ midi_exponent = 0.60
    
    Input this in the crontab file:
    
-   @reboot sh /home/user1/midi.sh
+   @reboot sh /home/user1/start-midi.sh
 
    ### Configuration Setup
 
