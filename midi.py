@@ -7,11 +7,13 @@ import threading
 # if you have only one device connected, leave inputname empty
 # if you have multiple devices connected, specify the name of the device you want to use
 # If you want to use the LPD8 to change the midi channel, set lpd8controlMode to True
-inputnamesearchname = "MPK mini"
-inputnamesearchname2 = "KOMPLETE"
+inputnamesearchname = "KOMPLETE"
+inputnamesearchname2 = "MPK mini"
 inputnamethrusearchname = "LPD8"
 outputsearchname = "U2MIDI"
 lpd8controlMode = True
+midi_max_value = 80
+midi_exponent = 0.60
 #### END CONFIGURATION ####
 
 inputname  = ""
@@ -45,7 +47,7 @@ for port in mido.get_output_names():
         outputname = port
 
 # Function to adjust the velocity curve
-def adjust_velocity(velocity, max_value=80, exponent=0.60):
+def adjust_velocity(velocity, max_value=midi_max_value, exponent=midi_exponent):
     if velocity == 0:
         return 0
     result = 127 * math.pow((velocity / max_value), exponent)
