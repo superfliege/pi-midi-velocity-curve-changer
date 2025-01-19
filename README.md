@@ -51,7 +51,12 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 
 ### 4. (optional) Disable/Enable LPD8 Control Mode
 
-- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`. 
+- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`.
+
+### 6. Set Velocity Curve Parameters
+
+- `midi_max_value`: Set this to the maximum MIDI velocity value you want to use (e.g., 80).
+- `midi_exponent`: Set this to the exponent value for the velocity curve adjustment (e.g., 0.60).
 
 ### Example Configuration
 
@@ -61,6 +66,8 @@ inputnamesearchname2 = "MPK mini"
 inputnamethrusearchname = "LPD8"
 outputsearchname = "U2MIDI"
 lpd8controlMode = True
+midi_max_value = 80
+midi_exponent = 0.60
 ```
 
 # 5. (optional) adjust the parameters from the function in the script for your optimal velocity settings.
