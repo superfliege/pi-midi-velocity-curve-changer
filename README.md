@@ -19,6 +19,10 @@ You also need:
 3. Raspberry Pi
 4. (Optional) Akai LPD8 Controller
 
+# Basic Hardware Setup
+![Screenshot 2025-01-31 195321](https://github.com/user-attachments/assets/baad05cb-7537-4d38-9271-32a55b285580)
+
+
 
 # Velocity Curve examples
 
