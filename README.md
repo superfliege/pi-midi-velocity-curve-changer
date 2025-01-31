@@ -20,6 +20,23 @@ You also need:
 4. (Optional) Akai LPD8 Controller
 
 
+# Velocity Curve examples
+
+midi_max_value = 100
+midi_exponent = 0.80
+![Screenshot 2025-01-31 194711](https://github.com/user-attachments/assets/8d43c2b7-941a-47c3-8a10-a86edf0a164e)
+
+Middle (Recommended)
+midi_max_value = 80
+midi_exponent = 0.60
+![Screenshot 2025-01-31 194445](https://github.com/user-attachments/assets/983e6e9d-31c0-477c-ae0d-ea19702bc97c)
+
+Strong
+midi_max_value = 80
+midi_exponent = 0.40
+![Screenshot 2025-01-31 194836](https://github.com/user-attachments/assets/e72b6f35-ce86-4b08-9395-1df7d7773c7e)
+
+
 # Setup 
 
 # 1. Setup the midi.py and start-midi.sh file on your raspberry pi
