@@ -47,8 +47,11 @@ midi_exponent = 0.40
 # 1. Setup the midi.py and start-midi.sh file on your raspberry pi
 # 2. Install the python libs:
    
+   ```sh
    pip install mido
    pip install math
+   ```
+
 # 3. Identify Your MIDI Devices
    - Run the script to list available input and output ports. The script will print the names of all connected MIDI devices.
 
@@ -57,30 +60,36 @@ midi_exponent = 0.40
 Open the start-midi.sh and configure your settings:
 
 Minimum Startup Commmands, only adjust velocity:
+```sh
 python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
+```
 
 Full Configuration with velocity adjustment, an altertnative input name and midi channel control over second midi device over program change:
+```sh
 python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
+```
 
 Here's a breakdown of each argument:
-
+```sh
 --inputmididevicename "KOMPLETE": Specifies the name of the first input MIDI device as "KOMPLETE".
 --inputmididevicename2 "MPK mini": Specifies the name of the second input MIDI device as "MPK mini".
 --inputmididevicenamemidichannel "LPD8": Specifies the name of the MIDI device for a specific MIDI channel as "LPD8". (optional)
 --outputmididevicename "U2MIDI": Specifies the name of the output MIDI device as "U2MIDI".
 --midi_max_value 80: Sets the maximum MIDI value to 80.
 --midi_exponent 0.60: Sets the exponent value for MIDI processing to 0.60.
+```
 
 
 # 6. Set up the autostart from your midi script:
    
+   ```sh
    chmod 775 /home/user1/start-midi.sh
-   
+
    crontab -e
-   
-   Input this in the crontab file:
-   
+
+   # Input this in the crontab file:
    @reboot sh /home/user1/start-midi.sh
+   ```
 
    ### Configuration Setup
 
