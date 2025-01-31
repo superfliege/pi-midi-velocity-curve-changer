@@ -90,9 +90,6 @@ Here's a breakdown of each argument:
    @reboot sh /home/user1/start-midi.sh
    ```
 
-   ### Configuration Setup
-
-
 ## Thanks
 
 Special thanks to @georg-zeiser!
