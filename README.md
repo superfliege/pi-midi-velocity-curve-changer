@@ -9,7 +9,7 @@ Although I think the keyboard is pretty good, it has a terrible velocity curve w
 
 Optional: If you possess an additional midi controller like the Akai LPD8 Controller, you can utilize the program change MIDI message to manipulate the MIDI channel from your input keyboard device. This functionality allows the script to provide the capability to change the MIDI channel for your keyboard.
 
-The pygamemidi.py and pygamemidi.sh are experimental and are used to display the velocity curve, midichannel change. They are not necessary.
+In the experimental folder are a few attempts to display the Velocity Curve on a MiniDisplay using PyGame. Currently this does not work well and is not necessary for the functionality. 
 
 You also need: 
 1. USB Keyboard
