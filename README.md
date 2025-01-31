@@ -7,8 +7,7 @@ I had the following problem:
 I have a Native Instruments KOMPLETE KONTROL A49 keyboard and an MPC ONE.
 Although I think the keyboard is pretty good, it has a terrible velocity curve which unfortunately is not standalone customizable. I still have an old Raspberry Pi lying around and a USB-to-Midi adapter. With this Python script it was possible to put the Raspberry Pi between the keyboard and the MPC one to function as a “velocity adjuster”.
 
-Optional: If you have an Akai LPD8 Controller you can use the prgm_change midi message to manipulate the midi messages from your input device.
-With this functionality the script will give you a chance to change midi channel for your keyboard. 
+Optional: If you possess an additional midi controller like the Akai LPD8 Controller, you can utilize the program change MIDI message to manipulate the MIDI channel from your input keyboard device. This functionality allows the script to provide the capability to change the MIDI channel for your keyboard.
 
 The pygamemidi.py and pygamemidi.sh are experimental and are used to display the velocity curve, midichannel change. They are not necessary.
 
@@ -53,7 +52,9 @@ midi_exponent = 0.40
    ```
 
 # 3. Identify Your MIDI Devices
-   - Run the script to list available input and output ports. The script will print the names of all connected MIDI devices.
+
+Run the script to list available input and output ports. The script will print the names of all connected MIDI devices.
+Simply use a part of the name to store this in the configuration as a search word. 
 
 ## 4. Configuration
 
@@ -64,7 +65,7 @@ Minimum Startup Commmands, only adjust velocity:
 python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
 ```
 
-Full Configuration with velocity adjustment, an altertnative input name and midi channel control over second midi device over program change:
+Full Configuration with velocity adjustment, an altertnative input keyboard and midi channel control over second midi device over program change:
 ```sh
 python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
 ```
