@@ -13,7 +13,6 @@ parser.add_argument('--inputmididevicename', type=str, default="KOMPLETE", help=
 parser.add_argument('--inputmididevicename2', type=str, default="MPK mini", help='Second search name for input device')
 parser.add_argument('--inputmididevicenamemidichannel', type=str, default="LPD8", help='Search name for input device to change midi channel')
 parser.add_argument('--outputmididevicename', type=str, default="U2MIDI", help='Search name for output device')
-parser.add_argument('--midichannelcontrolmode', type=bool, default=True, help='Enable LPD8 control mode')
 parser.add_argument('--midi_max_value', type=int, default=80, help='Maximum MIDI value for velocity adjustment')
 parser.add_argument('--midi_exponent', type=float, default=0.60, help='Exponent for velocity adjustment')
 
@@ -23,7 +22,6 @@ inputmididevicename = args.inputmididevicename
 inputmididevicename2 = args.inputmididevicename2
 inputmididevicenamemidichannel = args.inputmididevicenamemidichannel
 outputmididevicename = args.outputmididevicename
-midichannelcontrolmode = args.midichannelcontrolmode
 midi_max_value = args.midi_max_value
 midi_exponent = args.midi_exponent
 #### END CONFIGURATION ####
@@ -41,7 +39,7 @@ for port in mido.get_input_names():
         print("Using port for INPUT. ", port)
         inputname = port
 
-if midichannelcontrolmode == True:
+if inputmididevicenamemidichannel != "":
     print("Available input ports:")
     for port in mido.get_input_names():
         print(port)
@@ -104,6 +102,6 @@ def midithruthread():
 
 thread = threading.Thread(target=midithread)
 thread.start()
-if midichannelcontrolmode == True:
+if inputmididevicenamemidichannel == True:
     thread2 = threading.Thread(target=midithruthread)
     thread2.start()
