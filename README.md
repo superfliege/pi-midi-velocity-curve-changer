@@ -54,7 +54,7 @@ midi_exponent = 0.40
 # 3. Identify Your MIDI Devices
 
 Run the script to list available input and output ports. The script will print the names of all connected MIDI devices
-Simply use a part of the name to store this in the configuration as a search word. 
+Simply use a part of the name to store this in the parameters as a search word. 
 
 ## 4. Configuration
 
