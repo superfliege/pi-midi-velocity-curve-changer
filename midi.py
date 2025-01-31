@@ -76,6 +76,11 @@ print("\033[91m\nAvailable output ports:\033[0m")
 for port in mido.get_output_names():
     print(port)
 
+
+if not inputmididevicename or not outputmididevicename:
+    print("Input or output MIDI device name is empty. Exiting program. Please specify the names in the parameters.")
+    exit()
+
 print("\033[93mStarting configuring MIDI Velocity Curve Changer\033[0m")
 for port in mido.get_input_names():
     if inputmididevicename in port:
