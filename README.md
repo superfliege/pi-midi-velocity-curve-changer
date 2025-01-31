@@ -15,7 +15,7 @@ You also need:
 1. USB Keyboard
 2. A USB to Midi device (e.g.: CME U2MIDI Pro)
 3. Raspberry Pi
-4. (Optional) Akai LPD8 Controller
+4. (Optional) Akai LPD8 Controller or a other device which supports program change midi messages.
 
 # Basic Hardware Setup
 ![Screenshot 2025-01-31 195321](https://github.com/user-attachments/assets/baad05cb-7537-4d38-9271-32a55b285580)
@@ -52,7 +52,7 @@ midi_exponent = 0.40
 
 # 3. Identify Your MIDI Devices
 
-Run the script to list available input and output ports. The script will print the names of all connected MIDI devices.
+Run the script to list available input and output ports. The script will print the names of all connected MIDI devices
 Simply use a part of the name to store this in the configuration as a search word. 
 
 ## 4. Configuration
