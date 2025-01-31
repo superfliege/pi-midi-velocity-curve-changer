@@ -42,7 +42,8 @@ midi_exponent = 0.40
 
 # Setup 
 
-# 1. Copy the midi.py and start-midi.sh file on your raspberry pi for example: /home/youruser/
+# 1. Copy Files to your raspberry pi
+Copy the midi.py and start-midi.sh file on your raspberry pi for example: /home/youruser/
 
 # 2. Install the python libs:
    
