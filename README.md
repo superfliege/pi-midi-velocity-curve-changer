@@ -71,8 +71,8 @@ python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK min
 
 Here's a breakdown of each argument:
 ```sh
---inputmididevicename "KOMPLETE": Specifies the name of the first input MIDI device as "KOMPLETE".
---outputmididevicename "U2MIDI": Specifies the name of the output MIDI device as "U2MIDI".
+--inputmididevicename "KOMPLETE": Specifies the name of your MIDI Keyboard device as "KOMPLETE".
+--outputmididevicename "U2MIDI": Specifies the name of the output MIDI adapter as "U2MIDI".
 --midi_max_value 80: Sets the maximum MIDI value to 80.
 --midi_exponent 0.60: Sets the exponent value for MIDI processing to 0.60.
 --inputmididevicenamechannelcontrol "LPD8": Specifies the name of the MIDI device to control with the program_change event the midi channel for inputmididevicename. (optional)
