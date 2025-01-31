@@ -12,10 +12,10 @@ Optional: If you possess an additional midi controller like the Akai LPD8 Contro
 In the experimental folder are a few attempts to display the Velocity Curve on a MiniDisplay using PyGame. Currently this does not work well and is not necessary for the functionality. 
 
 You also need: 
-1. USB Keyboard
+1. USB Keyboard (e.g.: KOMPLETE KONTROL A49)
 2. A USB to Midi device (e.g.: CME U2MIDI Pro)
 3. Raspberry Pi
-4. (Optional) Akai LPD8 Controller or a other device which supports program change midi messages.
+4. (Optional) Midi Controller which supports program change midi messages (e.g.: Akai LPD8 Controller)
 
 # Basic Hardware Setup
 ![Screenshot 2025-01-31 195321](https://github.com/user-attachments/assets/baad05cb-7537-4d38-9271-32a55b285580)
