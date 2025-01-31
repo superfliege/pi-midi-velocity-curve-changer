@@ -89,7 +89,7 @@ Here's a breakdown of each argument:
    crontab -e
 
    # Input this in the crontab file:
-   @reboot sh /home/youruser/start-midi.sh
+   @reboot bash ./home/youruser/start-midi.sh
    ```
 
 ## Thanks
