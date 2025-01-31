@@ -11,6 +11,7 @@ parser.add_argument('--inputmididevicenamechannelcontrol', type=str, default="",
 parser.add_argument('--outputmididevicename', type=str, default="", help='Search name for output device')
 parser.add_argument('--midi_max_value', type=int, default=100, help='Maximum MIDI value for velocity adjustment')
 parser.add_argument('--midi_exponent', type=float, default=0.60, help='Exponent for velocity adjustment')
+parser.add_argument('--debugmode', type=bool, default=False, help='Enable debug mode for additional output')
 args = parser.parse_args()
 
 inputmididevicename = args.inputmididevicename
@@ -18,6 +19,7 @@ inputmididevicenamechannelcontrol = args.inputmididevicenamechannelcontrol
 outputmididevicename = args.outputmididevicename
 midi_max_value = args.midi_max_value
 midi_exponent = args.midi_exponent
+debugmode = args.debugmode
 # End of Configuration
 
 inputname  = ""
@@ -29,7 +31,8 @@ channelchange = 1
 def midithread():
     global inputname,outputname,channelchange
     for msg in input_port:
-        print(msg)
+        if debugmode:
+            print(msg)
         if msg.type == 'note_on' or msg.type == 'note_off':
             # Adjust the velocity
             msg.velocity = adjust_velocity(msg.velocity)
@@ -38,7 +41,8 @@ def midithread():
         elif msg.type == 'control_change' and msg.control == 1:
             msg.channel = channelchange
         # Send the modified message to the output port
-        print(msg)
+        if debugmode:
+            print(msg)
         output_port.send(msg)
 
 def midithruthread():

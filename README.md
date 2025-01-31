@@ -77,6 +77,7 @@ Here's a breakdown of each argument:
 --midi_max_value 80: Sets the maximum MIDI value to 80.
 --midi_exponent 0.60: Sets the exponent value for MIDI processing to 0.60.
 --inputmididevicenamechannelcontrol "LPD8": Specifies the name of the MIDI device to control with the program_change event the midi channel for inputmididevicename. (optional)
+--debugmode "0": Specifies whether to enable additional debug output. Set to `1` to enable debug output, or `0` to disable it. (optional)
 ```
 
 
