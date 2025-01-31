@@ -12,7 +12,6 @@ Optional: If you possess an additional midi controller like the Akai LPD8 Contro
 The pygamemidi.py and pygamemidi.sh are experimental and are used to display the velocity curve, midichannel change. They are not necessary.
 
 You also need: 
-
 1. USB Keyboard
 2. A USB to Midi device (e.g.: CME U2MIDI Pro)
 3. Raspberry Pi
@@ -73,8 +72,7 @@ python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK min
 Here's a breakdown of each argument:
 ```sh
 --inputmididevicename "KOMPLETE": Specifies the name of the first input MIDI device as "KOMPLETE".
---inputmididevicename2 "MPK mini": Specifies the name of the second input MIDI device as "MPK mini".
---inputmididevicenamemidichannel "LPD8": Specifies the name of the MIDI device for a specific MIDI channel as "LPD8". (optional)
+--inputmididevicenamechannelcontrol "LPD8": Specifies the name of the MIDI device to control with the program_change event the midi channel for inputmididevicename. (optional)
 --outputmididevicename "U2MIDI": Specifies the name of the output MIDI device as "U2MIDI".
 --midi_max_value 80: Sets the maximum MIDI value to 80.
 --midi_exponent 0.60: Sets the exponent value for MIDI processing to 0.60.
