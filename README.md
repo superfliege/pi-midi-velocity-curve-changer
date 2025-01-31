@@ -73,7 +73,7 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 
 ### 4. (optional) Disable/Enable LPD8 Control Mode
 
-- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`.
+- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`. This means if you send a control change from the 'inputnamethrusearchname' device you set the midi channel change for your keyboard. All midi events from your keyboard will be redirected to the same midi channel number from your program change event for this session. 
 
 ### 6. Set Velocity Curve Parameters
 
