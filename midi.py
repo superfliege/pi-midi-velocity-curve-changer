@@ -4,17 +4,13 @@ import math
 import threading
 import argparse
 
-#### CONFIGURATION ####
-# if you have only one device connected, leave inputname empty
-# if you have multiple devices connected, specify the name of the device you want to use
-# If you want to use the LPD8 to change the midi channel, set midichannelcontrolmode to True
+# Load Configuration for the MIDI Velocity Curve Changer
 parser = argparse.ArgumentParser(description='MIDI Velocity Curve Changer')
 parser.add_argument('--inputmididevicename', type=str, default="", help='Search name for input device')
 parser.add_argument('--inputmididevicenamechannelcontrol', type=str, default="", help='Search name for input device to change midi channel')
 parser.add_argument('--outputmididevicename', type=str, default="", help='Search name for output device')
 parser.add_argument('--midi_max_value', type=int, default=100, help='Maximum MIDI value for velocity adjustment')
 parser.add_argument('--midi_exponent', type=float, default=0.60, help='Exponent for velocity adjustment')
-
 args = parser.parse_args()
 
 inputmididevicename = args.inputmididevicename
@@ -22,14 +18,14 @@ inputmididevicenamechannelcontrol = args.inputmididevicenamechannelcontrol
 outputmididevicename = args.outputmididevicename
 midi_max_value = args.midi_max_value
 midi_exponent = args.midi_exponent
-#### END CONFIGURATION ####
+# End of Configuration
 
 inputname  = ""
 inputnamethru = ""
 outputname = ""
 channelchange = 1
 
-
+# Functions
 def midithread():
     global inputname,outputname,channelchange
     for msg in input_port:
@@ -65,6 +61,7 @@ def adjust_velocity(velocity, max_value=midi_max_value, exponent=midi_exponent):
     elif result < 1 or math.isnan(result):
         result = 1
     return int(result)
+# Functions end
 
 # List available input ports
 print("\033[91mAvailable input ports:\033[0m")
@@ -75,11 +72,14 @@ print("\033[91m\nAvailable output ports:\033[0m")
 for port in mido.get_output_names():
     print(port)
 
-
 if not inputmididevicename or not outputmididevicename:
     print("\033[91mInput or output MIDI device name is empty. Exiting program. Please specify the names in the parameters.\033[0m")
     exit()
+# List available input ports end
 
+
+
+# Configure the midi ports
 print("\033[93mStarting configuring MIDI Velocity Curve Changer\033[0m")
 for port in mido.get_input_names():
     if inputmididevicename in port:
@@ -100,12 +100,13 @@ for port in mido.get_output_names():
         outputname = port
         break
 
-# Open the input and output ports
 input_port = mido.open_input(inputname)
 output_port = mido.open_output(outputname)
 if inputmididevicenamechannelcontrol != "":
     inputthru_port = mido.open_input(inputnamethru)
+# Configure the midi ports end
  
+# Start the threads
 print("\033[93mStarting threads MIDI Velocity Curve Changer\033[0m")
 thread = threading.Thread(target=midithread)
 thread.start()
@@ -113,3 +114,4 @@ thread.start()
 if inputmididevicenamechannelcontrol != "":
     thread2 = threading.Thread(target=midithruthread)
     thread2.start()
+# Start the threads end
