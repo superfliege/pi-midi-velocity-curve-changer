@@ -65,6 +65,11 @@ Minimum Startup Commmands, only adjust velocity:
 python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
 ```
 
+Minimum Startup  only adjust velocity Script with debug mode
+```sh
+python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60 --debugmode 1
+```
+
 Full Configuration with velocity adjustment and midi channel control over second midi device program change events:
 ```sh
 python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
