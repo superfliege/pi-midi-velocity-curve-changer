@@ -59,7 +59,7 @@ Simply use a part of the name to store this in the parameters as a search word.
 
 ## 4. Configuration
 
-Open the start-midi.sh and configure your settings:
+Open the start-midi.sh configure your settings:
 
 Minimum Startup Commmands, only adjust velocity:
 ```sh
