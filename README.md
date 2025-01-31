@@ -61,7 +61,7 @@ Open the start-midi.sh and configure your settings:
 
 Minimum Startup Commmands, only adjust velocity:
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
+python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
 ```
 
 Full Configuration with velocity adjustment, an altertnative input name and midi channel control over second midi device over program change:
