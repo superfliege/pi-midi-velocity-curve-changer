@@ -19,6 +19,28 @@ You also need:
 3. Raspberry Pi
 4. (Optional) Akai LPD8 Controller
 
+# Basic Hardware Setup
+![Screenshot 2025-01-31 195321](https://github.com/user-attachments/assets/baad05cb-7537-4d38-9271-32a55b285580)
+
+
+
+# Velocity Curve examples
+
+## Light
+midi_max_value = 100
+midi_exponent = 0.80
+![Screenshot 2025-01-31 194711](https://github.com/user-attachments/assets/8d43c2b7-941a-47c3-8a10-a86edf0a164e)
+
+## Middle (Recommended)
+midi_max_value = 80
+midi_exponent = 0.60
+![Screenshot 2025-01-31 194445](https://github.com/user-attachments/assets/983e6e9d-31c0-477c-ae0d-ea19702bc97c)
+
+## Strong
+midi_max_value = 80
+midi_exponent = 0.40
+![Screenshot 2025-01-31 194836](https://github.com/user-attachments/assets/e72b6f35-ce86-4b08-9395-1df7d7773c7e)
+
 
 # Setup 
 
@@ -51,7 +73,7 @@ Open the script file (`midi.py`) in a text editor. Locate the configuration sect
 
 ### 4. (optional) Disable/Enable LPD8 Control Mode
 
-- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`.
+- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`. This means if you send a control change from the 'inputnamethrusearchname' device you set the midi channel change for your keyboard. All midi events from your keyboard will be redirected to the same midi channel number from your program change event for this session. 
 
 ### 6. Set Velocity Curve Parameters
 
