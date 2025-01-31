@@ -31,48 +31,7 @@ inputnamethru = ""
 outputname = ""
 channelchange = 1
 
-# List available input ports
-print("Available input ports:")
-for port in mido.get_input_names():
-    print(port)
-    if inputmididevicename in port or inputmididevicename2 in port:
-        print("Using port for INPUT. ", port)
-        inputname = port
 
-if inputmididevicenamemidichannel != "":
-    print("Available input ports:")
-    for port in mido.get_input_names():
-        print(port)
-        if inputmididevicenamemidichannel in port:
-            print("Using port for change midi channel:", port)
-            inputnamethru = port
-
-
-# List available output ports
-print("\nAvailable output ports:")
-for port in mido.get_output_names():
-    print(port)
-    if outputmididevicename in port:
-        print("Using port for OUTPUT: ", port)
-        outputname = port
-
-# Function to adjust the velocity curve
-def adjust_velocity(velocity, max_value=midi_max_value, exponent=midi_exponent):
-    if velocity == 0:
-        return 0
-    result = 127 * math.pow((velocity / max_value), exponent)
-    if result > 127:
-        result = 127
-    elif result < 1 or math.isnan(result):
-        result = 1
-    return int(result)
-
-# Open the input and output ports
-input_port = mido.open_input(inputname)
-inputthru_port = mido.open_input(inputnamethru)
-output_port = mido.open_output(outputname)
-
-# Process incoming MIDI messages
 def midithread():
     global inputname,outputname,channelchange
     for msg in input_port:
@@ -98,10 +57,56 @@ def midithruthread():
             channelchange = msg.program - 1
         else:
             output_port.send(msg)
-        
 
+# Function to adjust the velocity curve
+def adjust_velocity(velocity, max_value=midi_max_value, exponent=midi_exponent):
+    if velocity == 0:
+        return 0
+    result = 127 * math.pow((velocity / max_value), exponent)
+    if result > 127:
+        result = 127
+    elif result < 1 or math.isnan(result):
+        result = 1
+    return int(result)
+
+# List available input ports
+print("\033[91mAvailable input ports:\033[0m")
+for port in mido.get_input_names():
+    print(port)
+
+print("\033[91m\nAvailable output ports:\033[0m")
+for port in mido.get_output_names():
+    print(port)
+
+print("\033[93mStarting configuring MIDI Velocity Curve Changer\033[0m")
+for port in mido.get_input_names():
+    if inputmididevicename in port or inputmididevicename2 in port:
+        print("Using port for INPUT. ", port)
+        inputname = port
+        break
+
+if inputmididevicenamemidichannel != "":
+    for port in mido.get_input_names():
+        if inputmididevicenamemidichannel in port:
+            print("Using port for change midi channel:", port)
+            inputnamethru = port
+            break
+
+for port in mido.get_output_names():
+    if outputmididevicename in port:
+        print("Using port for OUTPUT: ", port)
+        outputname = port
+        break
+
+# Open the input and output ports
+input_port = mido.open_input(inputname)
+inputthru_port = mido.open_input(inputnamethru)
+output_port = mido.open_output(outputname)
+ 
+print("\033[93mStarting threads MIDI Velocity Curve Changer\033[0m")
 thread = threading.Thread(target=midithread)
 thread.start()
-if inputmididevicenamemidichannel == True:
+
+if inputmididevicenamemidichannel != "":
     thread2 = threading.Thread(target=midithruthread)
     thread2.start()
