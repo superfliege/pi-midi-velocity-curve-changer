@@ -48,49 +48,29 @@ midi_exponent = 0.40
 # 2. Install the python libs:
    
    pip install mido
-
    pip install math
 # 3. Identify Your MIDI Devices
-   - Connect your MIDI devices to your computer.
    - Run the script to list available input and output ports. The script will print the names of all connected MIDI devices.
-   
 
 ## 4. Configuration
 
-### 1. Edit Configuration Variables
+Open the start-midi.sh and configure your settings:
 
-Open the script file (`midi.py`) in a text editor. Locate the configuration section at the top of the script.
+Minimum Startup Commmands, only adjust velocity:
+python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
 
-### 2. Set Input Device Names
+Full Configuration with velocity adjustment, an altertnative input name and midi channel control over second midi device over program change:
+python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
 
-- `inputnamesearchname`: Set this to the name (or part of the name) of your primary MIDI input device (e.g., "KOMPLETE").
-- `inputnamesearchname2`: Set this to the name (or part of the name) of an alternative MIDI input device (e.g., "MPK mini"). If you have only one input device leave this empty. 
-- `inputnamethrusearchname`: Set this to the name (or part of the name) of the MIDI device used for the program_change will channel_change functionality (e.g., "LPD8"). If you do not need this leave this empty. 
+Here's a breakdown of each argument:
 
-### 3. Set Output Device Name
+--inputmididevicename "KOMPLETE": Specifies the name of the first input MIDI device as "KOMPLETE".
+--inputmididevicename2 "MPK mini": Specifies the name of the second input MIDI device as "MPK mini".
+--inputmididevicenamemidichannel "LPD8": Specifies the name of the MIDI device for a specific MIDI channel as "LPD8". (optional)
+--outputmididevicename "U2MIDI": Specifies the name of the output MIDI device as "U2MIDI".
+--midi_max_value 80: Sets the maximum MIDI value to 80.
+--midi_exponent 0.60: Sets the exponent value for MIDI processing to 0.60.
 
-- `outputsearchname`: Set this to the name (or part of the name) of your MIDI output device (e.g., "U2MIDI").
-
-### 4. (optional) Disable/Enable LPD8 Control Mode
-
-- `lpd8controlMode`: Set this to `True` if you want to use the LPD8 to change the MIDI channel threw the program_change. Otherwise, set it to `False`. This means if you send a control change from the 'inputnamethrusearchname' device you set the midi channel change for your keyboard. All midi events from your keyboard will be redirected to the same midi channel number from your program change event for this session. 
-
-### 6. Set Velocity Curve Parameters
-
-- `midi_max_value`: Set this to the maximum MIDI velocity value you want to use (e.g., 80).
-- `midi_exponent`: Set this to the exponent value for the velocity curve adjustment (e.g., 0.60).
-
-### Example Configuration
-
-```python
-inputnamesearchname = "KOMPLETE"
-inputnamesearchname2 = "MPK mini"
-inputnamethrusearchname = "LPD8"
-outputsearchname = "U2MIDI"
-lpd8controlMode = True
-midi_max_value = 80
-midi_exponent = 0.60
-```
 
 # 6. Set up the autostart from your midi script:
    
