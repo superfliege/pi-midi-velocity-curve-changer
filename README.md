@@ -80,7 +80,7 @@ Here's a breakdown of each argument:
 ```
 
 
-# 6. Set up the autostart from your midi script:
+# 6. Set up the autostart for your midi script:
    
    ```sh
    chmod 775 /home/youruser/start-midi.sh
