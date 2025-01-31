@@ -1,1 +1,1 @@
-python3 midi.py --inputnamesearchname "KOMPLETE" --inputnamesearchname2 "MPK mini" --inputnamethrusearchname "LPD8" --outputsearchname "U2MIDI" --lpd8controlMode True --midi_max_value 80 --midi_exponent 0.60
+python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicename2 "MPK mini" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
