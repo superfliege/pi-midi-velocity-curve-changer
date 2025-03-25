@@ -53,17 +53,17 @@ Open the start-midi.sh configure your settings:
 
 Minimum Startup Commmands, only adjust velocity:
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent 0.60
+python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent -60
 ```
 
 Minimum Startup  only adjust velocity Script with debug mode
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent 0.60 --debugmode 1
+python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent -60 --debugmode 1
 ```
 
 Full Configuration with velocity adjustment and midi channel control over second midi device program change events:
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_exponent 0.60
+python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_exponent -60
 ```
 
 Here's a breakdown of each argument:
