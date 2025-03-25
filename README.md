@@ -22,7 +22,10 @@ You also need:
 
 
 
-# Velocity Curve examples
+# Velocity Curve example
+
+This results in value curves ranging between the three shown below (blue is -100, gray is 0 and red is 100):
+![uVJBx](https://github.com/user-attachments/assets/21e26e1c-da87-4e09-a1e1-95efd514eeae)
 
 
 # Setup 
@@ -33,11 +36,13 @@ Copy the midi.py and start-midi.sh file on your raspberry pi for example: /home/
 # 2. Install the python libs:
    
    ```sh
-   pip install mido
+   pip install mido![uVJBx](https://github.com/user-attachments/assets/3e94456f-f77c-4ab8-8897-26c7ef5fbe07)
+
    pip install math
    ```
 
 # 3. Identify Your MIDI Devices
+
 
 Run the script to list available input and output ports. The script will print the names of all connected MIDI devices
 Simply use a part of the name to store this in the parameters as a search word. 
