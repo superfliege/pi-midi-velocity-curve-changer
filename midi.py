@@ -39,11 +39,16 @@ def midithread():
             msg.channel = channelchange
         elif msg.type == 'control_change' and msg.control == 1:
             msg.channel = channelchange
+
         # Send the modified message to the output port
+
         if debugmode:
             print("adjusted")
             print(msg)
-        output_port.send(msg)
+        if msg.type == "control_change" and msg.control == 65:
+            print("control_change 65 received throw it" )
+        else:
+            output_port.send(msg)
 
 def midithruthread():
     global inputname,outputname,channelchange
@@ -52,6 +57,8 @@ def midithruthread():
         #adjust midi channel
         if msg.type == "program_change":
             channelchange = msg.program - 1
+        elif msg.type == "control_change" and msg.control == 65:
+            print("control_change 65 received pass" )
         else:
             output_port.send(msg)
 
