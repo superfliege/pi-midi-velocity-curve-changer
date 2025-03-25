@@ -9,7 +9,6 @@ parser = argparse.ArgumentParser(description='MIDI Velocity Curve Changer')
 parser.add_argument('--inputmididevicename', type=str, default="", help='Search name for input device')
 parser.add_argument('--inputmididevicenamechannelcontrol', type=str, default="", help='Search name for input device to change midi channel')
 parser.add_argument('--outputmididevicename', type=str, default="", help='Search name for output device')
-parser.add_argument('--midi_max_value', type=int, default=100, help='Maximum MIDI value for velocity adjustment')
 parser.add_argument('--midi_exponent', type=float, default=0.60, help='Exponent for velocity adjustment')
 parser.add_argument('--debugmode', type=bool, default=False, help='Enable debug mode for additional output')
 args = parser.parse_args()
@@ -17,7 +16,6 @@ args = parser.parse_args()
 inputmididevicename = args.inputmididevicename
 inputmididevicenamechannelcontrol = args.inputmididevicenamechannelcontrol
 outputmididevicename = args.outputmididevicename
-midi_max_value = args.midi_max_value
 midi_exponent = args.midi_exponent
 debugmode = args.debugmode
 # End of Configuration
@@ -56,14 +54,32 @@ def midithruthread():
             output_port.send(msg)
 
 # Function to adjust the velocity curve
-def adjust_velocity(velocity, max_value=midi_max_value, exponent=midi_exponent):
-    if velocity == 0:
-        return 0
-    result = 127 * math.pow((velocity / max_value), exponent)
+def adjust_velocity(value, deviation=midi_exponent):
+    if deviation < -100 or deviation > 100:
+        raise ValueError("Deviation must be between -100 and 100")
+    min_midi = 0.0
+    max_midi = 127.0
+    mid_midi = 63.5
+
+    # This is our control point for the quadratic bezier curve
+    control_point_x = mid_midi + ((deviation / 100) * mid_midi)
+
+    # Calculate the percent position of the incoming value in relation to the max
+    t = float(value) / max_midi
+
+    # Quadratic bezier curve formula:
+    # B(t) = (1-t)^2 * min + 2*(1-t)*t*control_point_x + t^2 * max
+    delta = int(round(2 * (1 - t) * t * control_point_x + (t * t * max_midi)))
+    
+    # Adjusted velocity is computed as (value - delta) + value
+    result = 2 * value - delta
+
+    # Clamp result within the valid MIDI range
     if result > 127:
         result = 127
-    elif result < 1 or math.isnan(result):
-        result = 1
+    elif result < 0:
+        result = 0
+
     return int(result)
 # Functions end
 

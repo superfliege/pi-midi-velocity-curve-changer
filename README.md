@@ -24,21 +24,6 @@ You also need:
 
 # Velocity Curve examples
 
-## Light
-midi_max_value = 100
-midi_exponent = 0.80
-![Screenshot 2025-01-31 194711](https://github.com/user-attachments/assets/8d43c2b7-941a-47c3-8a10-a86edf0a164e)
-
-## Middle (Recommended)
-midi_max_value = 80
-midi_exponent = 0.60
-![Screenshot 2025-01-31 194445](https://github.com/user-attachments/assets/983e6e9d-31c0-477c-ae0d-ea19702bc97c)
-
-## Strong
-midi_max_value = 80
-midi_exponent = 0.40
-![Screenshot 2025-01-31 194836](https://github.com/user-attachments/assets/e72b6f35-ce86-4b08-9395-1df7d7773c7e)
-
 
 # Setup 
 
@@ -63,25 +48,24 @@ Open the start-midi.sh configure your settings:
 
 Minimum Startup Commmands, only adjust velocity:
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
+python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent 0.60
 ```
 
 Minimum Startup  only adjust velocity Script with debug mode
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60 --debugmode 1
+python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent 0.60 --debugmode 1
 ```
 
 Full Configuration with velocity adjustment and midi channel control over second midi device program change events:
 ```sh
-python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_max_value 80 --midi_exponent 0.60
+python3 midi.py --inputmididevicename "KOMPLETE" --inputmididevicenamemidichannel "LPD8" --outputmididevicename "U2MIDI" --midi_exponent 0.60
 ```
 
 Here's a breakdown of each argument:
 ```sh
 --inputmididevicename "KOMPLETE": Specifies the name of your MIDI Keyboard device as "KOMPLETE".
 --outputmididevicename "U2MIDI": Specifies the name of the output MIDI adapter as "U2MIDI".
---midi_max_value 80: Sets the maximum MIDI value to 80.
---midi_exponent 0.60: Sets the exponent value for MIDI processing to 0.60.
+--midi_exponent -100 to +100
 --inputmididevicenamechannelcontrol "LPD8": Specifies the name of the MIDI device to control with the program_change event the midi channel for inputmididevicename. (optional)
 --debugmode "0": Specifies whether to enable additional debug output. Set to `1` to enable debug output, or `0` to disable it. (optional)
 ```
