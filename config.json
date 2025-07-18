@@ -1,0 +1,10 @@
+{
+  "inputmididevicename": "KOMPLETE",
+  "outputmididevicename": "U2MIDI",
+  "inputmididevicenamechannelcontrol": "",
+  "midi_exponent": -60,
+  "curve_type": "bezier",
+  "sensitivity": 1.0,
+  "threshold": 5,
+  "debugmode": false
+} 
