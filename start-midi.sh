@@ -3,11 +3,11 @@
 
 # Method 1: Using JSON configuration (recommended)
 # Create a config.json file with your settings and uncomment the line below:
-#python3 midi.py --config config.json
+python3 midi.py --config config.json
 
 # Method 2: Command line arguments (legacy)
 # Basic velocity adjustment
-python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent -60
+#python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent -60
 
 # Method 3: With debug mode
 #python3 midi.py --inputmididevicename "KOMPLETE" --outputmididevicename "U2MIDI" --midi_exponent -60 --debugmode
