@@ -18,6 +18,8 @@ from enum import Enum
 import json
 import os
 
+import matplotlib.pyplot as plt
+
 # Type hints for mido messages to help the linter
 MIDIMessage = Union[mido.Message, Any]
 
