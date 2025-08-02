@@ -2,6 +2,7 @@
 ## Description 
 This little python script will adjust the midi velocity curve from your keyboard to fix velocity issues if your keyboard does not handle the velocity well. 
 Setup is like: Keyboard -> USB -> Rasbperry PI -> USB to Midi -> Midi In from your Synthesizer / MPC.
+Bug reports and suggestions for improvement are welcome. Please feel free to create pull requests here as well.
 
 I had the following problem:
 I have a Native Instruments KOMPLETE KONTROL A49 keyboard and an MPC ONE.
@@ -36,7 +37,7 @@ Copy the midi.py and start-midi.sh file on your raspberry pi for example: /home/
 # 2. Install the python libs:
    
    ```sh
-   pip install mido![uVJBx](https://github.com/user-attachments/assets/3e94456f-f77c-4ab8-8897-26c7ef5fbe07)
+   pip install mido
 
    pip install math
    ```
@@ -88,6 +89,7 @@ Here's a breakdown of each argument:
    ```
 
 ## Thanks
+
 
 Special thanks to @georg-zeiser!
 Source: https://github.com/georg-zeiser/midi-velocity-mapper
